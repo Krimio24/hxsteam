@@ -16,6 +16,24 @@
 
 ---
 
+## ⚠️ Important: Steamworks SDK Setup
+
+> **Please put your own Steamworks SDK headers and binaries into the library directory before compiling:**
+>
+> 1. Download the [Steamworks SDK](https://partner.steamgames.com/).
+> 2. Copy the contents of `sdk/public/steam/` into:
+>    ```text
+>    hxsteam/include/steam/
+>    ```
+> 3. Copy the compiled redistributable binaries (`steam_api64.dll` / `steam_api64.lib` from `sdk/redistributable_bin/`) into:
+>    ```text
+>    hxsteam/project/windows/   (for Windows)
+>    hxsteam/project/linux/     (for Linux)
+>    hxsteam/project/macos/     (for macOS)
+>    ```
+
+---
+
 ## ⚡ Features
 
 - **Lifecycle Management**: Safe initialization with AppID, DRM/launch relaunching (`restartAppIfNecessary`), automatic environment variables, and clean shutdown.
