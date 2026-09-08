@@ -1,18 +1,50 @@
-# hxsteam
-**hxsteam** is a lightweight, modern Steamworks integration library for Haxe, Lime, OpenFL, and HaxeFlixel (targeting C++/Desktop).
-## Features
-- **Steam API Core Lifecycle**: `Steam.init(appId)`, `Steam.update()`, `Steam.stop()`, `Steam.isSteamRunning()`, `Steam.restartAppIfNecessary()`.
-- **Achievements & Stats (`steam.UserStats`)**: Set, get, store achievements and integer/float statistics, track achievement progress limits, query achievement counts and descriptions.
-- **Friends & Overlay (`steam.Friends`)**: Read player persona name, persona state, friend list counts, Rich Presence, open Steam Overlay dialogs, web pages, and store pages.
-- **Apps & DLC (`steam.Apps`)**: Check subscriptions, installed DLCs, game languages, beta branches, VAC status, and installation directories.
-- **Utils (`steam.Utils`)**: Query App ID, active session time, Steam server time, IP country, VR mode, Big Picture mode, overlay status.
-- **User Information (`steam.User`)**: Get 64-bit Steam ID string, Steam level, badge levels, logon status.
-- **Cloud & Remote Storage (`steam.RemoteStorage`)**: File write, file read, file exists, delete, forget, file size, quota, and Cloud enablement.
+<p align="center">
+  <img src="https://raw.githubusercontent.com/ValveSoftware/source-sdk-2013/master/sp/src/game/client/steam_icon.png" width="90" alt="Steam Logo" />
+</p>
+
+<h1 align="center">hxsteam</h1>
+
+<p align="center">
+  <b>Lightweight, modern native Steamworks SDK integration for Haxe, Lime, OpenFL, and HaxeFlixel.</b>
+</p>
+
+<p align="center">
+  <img src="https://img.shields.io/badge/target-C%2B%2B%20%2F%20Desktop-blue.svg" alt="Target C++" />
+  <img src="https://img.shields.io/badge/license-MIT-green.svg" alt="License MIT" />
+  <img src="https://img.shields.io/badge/haxe-4.x-orange.svg" alt="Haxe 4" />
+</p>
+
 ---
-## Installation & Setup
-In your project's `Project.xml` (Lime / OpenFL / HaxeFlixel):
+
+## ⚡ Features
+
+- **Lifecycle Management**: Safe initialization with AppID, DRM/launch relaunching (`restartAppIfNecessary`), automatic environment variables, and clean shutdown.
+- **Auto-Update with Lime/Flixel**: Dispatches callbacks in real-time every frame automatically without requiring boilerplate update hooks.
+- **Achievements & Stats (`steam.UserStats`)**:
+  - Unlock and clear achievements with immediate in-game Steam Overlay toast popup notifications.
+  - Integer and float statistics (`int` / `float`).
+  - Achievement progress tracking notifications (`indicateAchievementProgress`).
+  - Total or partial stats and achievements reset (`resetAllStats`).
+- **Friends & Overlay (`steam.Friends`)**:
+  - Retrieve persona name, online state, and friend list counts.
+  - Open any Steam Overlay dialog (Achievements, Friends, Community, Settings, etc.).
+  - Open web pages or the Steam Store directly in the Overlay browser.
+  - **Rich Presence** integration (dynamic status displayed on friends' lists).
+- **Steam Cloud / Remote Storage (`steam.RemoteStorage`)**:
+  - Read, write, delete, and check files synchronized with the Steam Cloud.
+  - Query Cloud enablement status per account and per application.
+- **App & DLC Information (`steam.Apps`)**:
+  - Check installed DLCs, active/available game languages, beta branches, and VAC ban status.
+- **System Utilities (`steam.Utils`)**:
+  - Active session duration, country/IP location, Big Picture mode, VR mode, and floating gamepad text input.
+- **User Identity (`steam.User`)**:
+  - Retrieve 64-bit SteamID (`uint64` formatted as String), player Steam level, and badge levels.
+
+---
+
+## 📦 Installation
+
+Add the library to your `Project.xml` (for Lime / OpenFL / HaxeFlixel projects):
+
 ```xml
 <haxelib name="hxsteam" />
-```
-*Note: Lime will automatically copy `steam_api64.dll` (or `.so`/`.dylib` on Linux/macOS) into your export binaries folder.*
----
