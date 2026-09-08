@@ -1,0 +1,1 @@
+Put your sdk/public/Steam there please
