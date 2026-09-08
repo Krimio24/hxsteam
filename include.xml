@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<extension
+    xmlns="http://lime.openfl.org/project/1.0.4"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://lime.openfl.org/project/1.0.4 http://lime.openfl.org/xsd/project-1.0.4.xsd">
+
+    <section if="windows">
+        <library name="steam_api" preload="false" />
+        <assets path="project/windows" rename="" exclude="*.lib" library="steam_api" />
+    </section>
+
+    <section if="mac || macos">
+        <library name="steam_api" preload="false" />
+        <assets path="project/macos" rename="../MacOS" library="steam_api" />
+    </section>
+
+    <section if="linux">
+        <library name="steam_api" preload="false" />
+        <assets path="project/linux" rename="" library="steam_api" />
+    </section>
+
+    <source path="src" />
+</extension>

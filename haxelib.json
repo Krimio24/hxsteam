@@ -1,0 +1,19 @@
+{
+  "name": "hxsteam",
+  "url" : "https://github/Krimio24/hxsteam",
+  "license": "MIT",
+  "tags": [
+    "game",
+    "pc",
+    "steam",
+    "lime",
+    "cpp"
+  ],
+  "description": "hxsteam is a lightweight Haxe library that provides a simple native interface for integrating Steamworks features into Haxe games.",
+  "classPath": "src",
+  "contributors": [
+    "thomasjwebb"
+  ],
+  "releasenote": "First Release",
+  "version": "1.0.0"
+}

@@ -1,0 +1,32 @@
+<xml>
+	<pragma once="true" />
+
+	<set name="PROJECT_DIR" value="${haxelib:hxsteam}" />
+
+	<files id="haxe">
+		<compilerflag value="-I${PROJECT_DIR}/include" />
+	</files>
+
+	<files id="__main__">
+		<compilerflag value="-I${PROJECT_DIR}/include" />
+	</files>
+
+	<target id="haxe">
+		<section if="windows">
+			<section if="HXCPP_M64">
+				<lib name="${PROJECT_DIR}/project/windows/steam_api64.lib" />
+			</section>
+			<section unless="HXCPP_M64">
+				<lib name="${PROJECT_DIR}/project/windows/steam_api.lib" />
+			</section>
+		</section>
+
+		<section if="macos">
+			<lib name="${PROJECT_DIR}/project/macos/libsteam_api.dylib" />
+		</section>
+
+		<section if="linux">
+			<lib name="${PROJECT_DIR}/project/linux/libsteam_api.so" />
+		</section>
+	</target>
+</xml>
